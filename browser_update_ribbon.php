@@ -67,7 +67,7 @@ function browser_update_ribbon_show () {
 		$img_url = get_option('siteurl').'/wp-content/plugins/' . basename(dirname(__FILE__)).'/browser_update_ribbon.png';
 		echo '<a href="'.$browser_update_ribbon_option['link'].'" title="'.$browser_update_ribbon_option['title'].'"><img src="'.$img_url.'" 
 			alt="'.$browser_update_ribbon_option['title'].'" title="'.$browser_update_ribbon_option['title'].'" 
-			style="position: fixed; top:0; left: 0; z-index: 100000; cursor: pointer; border:none; background:transparent;" /></a>';
+			style="position: fixed; top:0; left: 0; z-index: 100000; cursor: pointer; border:none; background-color:transparent;" /></a>';
 	}
 }
 
