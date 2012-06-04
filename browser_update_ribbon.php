@@ -3,8 +3,8 @@
 Plugin Name: Browser Update Ribbon
 Plugin URI: http://www.duckinformatica.it
 Description: Puts a ribbon on the website if the user browser is older than expected.
-Author: duckinformatica
-Version: 1.1
+Author: duckinformatica, whiletrue
+Version: 1.2
 Author URI: http://www.duckinformatica.it
 */
 
@@ -65,7 +65,8 @@ function browser_update_ribbon_show () {
 	if(isset($browser_update_ribbon_option['blocked_browsers'][$browser_name]) 
 	and $browser_update_ribbon_option['blocked_browsers'][$browser_name] > (int)$browser->getVersion()) {
 		$img_url = get_option('siteurl').'/wp-content/plugins/' . basename(dirname(__FILE__)).'/browser_update_ribbon.png';
-		echo '<a href="'.$browser_update_ribbon_option['link'].'" title="'.$browser_update_ribbon_option['title'].'"><img src="'.$img_url.'" 
+		$target = ($browser_update_ribbon_option['link_target']=='blank') ? ' target="_blank" ' : '';
+		echo '<a href="'.$browser_update_ribbon_option['link'].'" title="'.$browser_update_ribbon_option['title'].'" '.$target.'><img src="'.$img_url.'" 
 			alt="'.$browser_update_ribbon_option['title'].'" title="'.$browser_update_ribbon_option['title'].'" 
 			style="position: fixed; top:0; left: 0; z-index: 100000; cursor: pointer; border:none; background-color:transparent;" /></a>';
 	}
@@ -102,6 +103,7 @@ function browser_update_ribbon_options () {
 		}
 		$option['title'] = esc_html($_POST[$option_name.'_title']);
 		$option['link']  = esc_html($_POST[$option_name.'_link']);
+		$option['link_target']  = esc_html($_POST[$option_name.'_link_target']);
 		$option['debug'] = (isset($_POST[$option_name.'_debug']) and $_POST[$option_name.'_debug']=='on') ? true : false;
 		
 		update_option($option_name, $option);
@@ -113,6 +115,7 @@ function browser_update_ribbon_options () {
 	$option = browser_update_ribbon_get_options_stored();
 	
 	$debug = ($option['debug']) ? 'checked="checked"' : '';
+	$link_target_blank = ($option['link_target']=='blank') ? 'selected="selected"' : '';
 	
 	// SETTINGS FORM
 
@@ -164,6 +167,12 @@ function browser_update_ribbon_options () {
 			<tr><td>'.__("Link", 'menu-test' ).':</td>
 			<td><input type="text" name="'.$option_name.'_link" value="'.stripslashes($option['link']).'" size="60" /><br />
 				<span class="description">'.__("Link activated when the user clicks on the ribbon. The link can be a page of your website or an external url", 'menu-test' ).'</span>
+			</td></tr>
+			<tr><td>'.__("Link target", 'menu-test' ).':</td>
+			<td><select name="'.$option_name.'_link_target">
+				<option value=""> '.__('same window', 'menu-test' ).'</option>
+				<option value="blank" '.$link_target_blank.' > '.__('new window', 'menu-test' ).'</option>
+				</select>
 			</td></tr>
 			<tr><td>'.__("Debug mode", 'menu-test' ).':</td>
 			<td><input type="checkbox" name="'.$option_name.'_debug" '.$debug.' />
@@ -232,6 +241,7 @@ function browser_update_ribbon_get_options_default () {
 	$option = array();
 	$option['title'] = 'Please update your browser';
 	$option['link'] = 'http://www.updateyourbrowser.net/en/';
+	$option['link_target'] = '';
 	$option['debug'] = false;
 
 	// THE NUMBER REPRESENTS THE MINUMUM ACCEPTED VERSION
