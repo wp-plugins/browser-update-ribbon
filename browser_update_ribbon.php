@@ -4,7 +4,7 @@ Plugin Name: Browser Update Ribbon
 Plugin URI: http://www.duckinformatica.it
 Description: Puts a ribbon on the website if the user browser is older than expected.
 Author: duckinformatica, whiletrue
-Version: 1.2
+Version: 1.2.1
 Author URI: http://www.duckinformatica.it
 */
 
@@ -60,7 +60,7 @@ function browser_update_ribbon_show () {
 	$browser_name = strtolower(str_replace(' ', '_', $browser->getBrowser()));
 	
 	if ($browser_update_ribbon_option['debug']) {
-		echo 'Testing on '.$browser_name.' - version '.(int)$browser->getVersion().'<br />';
+		echo 'Detected browser: '.$browser_name.' -- Detected version: '.(int)$browser->getVersion().' -- User agent string: '.$browser->getUserAgent().'<br />';
 	}
 	if(isset($browser_update_ribbon_option['blocked_browsers'][$browser_name]) 
 	and $browser_update_ribbon_option['blocked_browsers'][$browser_name] > (int)$browser->getVersion()) {

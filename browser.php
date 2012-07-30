@@ -1,12 +1,12 @@
 <?php
 	/**
 	 * File: Browser.php
-	 * Author: Chris Schuld (http://chrisschuld.com/)
-	 * Last Modified: August 20th, 2010
-	 * @version 1.9
+	 * Author: Chris Schuld (http://chrisschuld.com/) and Giuliano Polverari ( http://www.whiletrue.it ) 
+	 * Last Modified: 2012-07-30
+	 * @version 1.9.1
 	 * @package PegasusPHP
 	 *
-	 * Copyright (C) 2008-2010 Chris Schuld  (chris@chrisschuld.com)
+	 * Copyright (C) 2008-2012 Chris Schuld (chris@chrisschuld.com) and Giuliano Polverari ( info@whiletrue.it )
 	 *
 	 * This program is free software; you can redistribute it and/or
 	 * modify it under the terms of the GNU General Public License as
@@ -34,6 +34,9 @@
 	 *
 	 * UPDATES:
 	 *
+	 * 2010-07-30 (v1.9.1):
+	 *  + Added support for Opera version 12
+	 *	 	 
 	 * 2010-08-20 (v1.9):
 	 *  + Added MSN Explorer Browser (legacy)
 	 *  + Added Bing/MSN Robot (Thanks Rob MacDonald)
@@ -581,7 +584,7 @@
 		    }
 		    else if( stripos($this->_agent,'opera') !== false ) {
 			    $resultant = stristr($this->_agent, 'opera');
-			    if( preg_match('/Version\/(10.*)$/',$resultant,$matches) ) {
+			    if( preg_match('/Version\/(.+)$/',$resultant,$matches) ) {
 				    $this->setVersion($matches[1]);
 			    }
 			    else if( preg_match('/\//',$resultant) ) {
