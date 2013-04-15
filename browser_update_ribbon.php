@@ -4,7 +4,7 @@ Plugin Name: Browser Update Ribbon
 Plugin URI: http://www.duckinformatica.it
 Description: Puts a ribbon on the website if the user browser is older than expected.
 Author: duckinformatica, whiletrue
-Version: 1.2.1
+Version: 1.2.2
 Author URI: http://www.duckinformatica.it
 */
 
@@ -246,11 +246,11 @@ function browser_update_ribbon_get_options_default () {
 
 	// THE NUMBER REPRESENTS THE MINUMUM ACCEPTED VERSION
 	$option['blocked_browsers'] = array( 
-		'chrome'=>'14',
-		'firefox'=>'5',
+		'chrome'=>'26',
+		'firefox'=>'20',
 		'internet_explorer'=>'8',
-		'opera'=>'11',
-		'safari'=>'5'
+		'opera'=>'12',
+		'safari'=>'6'
 	);
 	return $option;
 }
