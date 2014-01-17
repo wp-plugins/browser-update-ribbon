@@ -3,8 +3,8 @@ Contributors: duckinformatica, whiletrue
 Donate link: http://www.duckinformatica.it/ 
 Tags: browser, update, ribbon, ie, internet explorer, chrome, firefox, opera, iphone, mobile, blackberry, android, safari, ipad, block, css, errors, display, recommend, download, page, admin
 Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 1.2.2
+Tested up to: 3.8.0
+Stable tag: 1.3.0
 
 Puts a ribbon on the website if the user browser is older than expected.
 
@@ -29,6 +29,11 @@ This plugin uses the Browser detection library built by [Chris Schuld][]. A big 
 
 == Changelog ==
 
+= 1.3.0 = 
+* Changed: Default minimum browser versions
+* Changed: Update Browser detection library (2013-12-13)
+* Added: Link target customization (same window, new window)
+
 = 1.2.2 = 
 * Changed: Default minimum browser versions
 
@@ -43,10 +48,10 @@ This plugin uses the Browser detection library built by [Chris Schuld][]. A big 
 * Fixed: Transparent background for ribbon image (fix for IE old versions)
 
 = 1.0 = 
-Initial release
+* Initial release
 
 
 == Upgrade Notice ==
 
 = 1.0 =
-Initial release
+* Initial release

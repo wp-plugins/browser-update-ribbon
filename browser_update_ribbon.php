@@ -4,7 +4,7 @@ Plugin Name: Browser Update Ribbon
 Plugin URI: http://www.duckinformatica.it
 Description: Puts a ribbon on the website if the user browser is older than expected.
 Author: duckinformatica, whiletrue
-Version: 1.2.2
+Version: 1.3.0
 Author URI: http://www.duckinformatica.it
 */
 
@@ -53,6 +53,7 @@ function browser_update_ribbon_show () {
 	}
 
 	global $browser_update_ribbon_option;
+  
 	
 	require_once('browser.php');
 	$browser = new Browser();
@@ -62,8 +63,13 @@ function browser_update_ribbon_show () {
 	if ($browser_update_ribbon_option['debug']) {
 		echo 'Detected browser: '.$browser_name.' -- Detected version: '.(int)$browser->getVersion().' -- User agent string: '.$browser->getUserAgent().'<br />';
 	}
+  $showhome=true;
+  if ($browser_update_ribbon_option['onlyhome']){
+     if (!is_front_page()) $showhome=false; 
+  }
+
 	if(isset($browser_update_ribbon_option['blocked_browsers'][$browser_name]) 
-	and $browser_update_ribbon_option['blocked_browsers'][$browser_name] > (int)$browser->getVersion()) {
+	and $browser_update_ribbon_option['blocked_browsers'][$browser_name] > (int)$browser->getVersion() and $showhome) {
 		$img_url = get_option('siteurl').'/wp-content/plugins/' . basename(dirname(__FILE__)).'/browser_update_ribbon.png';
 		$target = ($browser_update_ribbon_option['link_target']=='blank') ? ' target="_blank" ' : '';
 		echo '<a href="'.$browser_update_ribbon_option['link'].'" title="'.$browser_update_ribbon_option['title'].'" '.$target.'><img src="'.$img_url.'" 
@@ -105,6 +111,7 @@ function browser_update_ribbon_options () {
 		$option['link']  = esc_html($_POST[$option_name.'_link']);
 		$option['link_target']  = esc_html($_POST[$option_name.'_link_target']);
 		$option['debug'] = (isset($_POST[$option_name.'_debug']) and $_POST[$option_name.'_debug']=='on') ? true : false;
+    $option['onlyhome'] = (isset($_POST[$option_name.'_onlyhome']) and $_POST[$option_name.'_onlyhome']=='on') ? true : false;
 		
 		update_option($option_name, $option);
 		// Put a settings updated message on the screen
@@ -115,6 +122,7 @@ function browser_update_ribbon_options () {
 	$option = browser_update_ribbon_get_options_stored();
 	
 	$debug = ($option['debug']) ? 'checked="checked"' : '';
+  $onlyhome = ($option['onlyhome']) ? 'checked="checked"' : '';
 	$link_target_blank = ($option['link_target']=='blank') ? 'selected="selected"' : '';
 	
 	// SETTINGS FORM
@@ -173,6 +181,10 @@ function browser_update_ribbon_options () {
 				<option value=""> '.__('same window', 'menu-test' ).'</option>
 				<option value="blank" '.$link_target_blank.' > '.__('new window', 'menu-test' ).'</option>
 				</select>
+			</td></tr>
+      <tr><td>'.__("Homepage Only", 'menu-test' ).':</td>
+			<td><input type="checkbox" name="'.$option_name.'_onlyhome" '.$onlyhome.' />
+					<span class="description">'.__("Enable homepage only mode (shows only in homepage)", 'menu-test' ).'</span>
 			</td></tr>
 			<tr><td>'.__("Debug mode", 'menu-test' ).':</td>
 			<td><input type="checkbox" name="'.$option_name.'_debug" '.$debug.' />
@@ -242,15 +254,17 @@ function browser_update_ribbon_get_options_default () {
 	$option['title'] = 'Please update your browser';
 	$option['link'] = 'http://www.updateyourbrowser.net/en/';
 	$option['link_target'] = '';
-	$option['debug'] = false;
+	$option['onlyhome'] = false;
+  $option['debug'] = false;
+  
 
 	// THE NUMBER REPRESENTS THE MINUMUM ACCEPTED VERSION
 	$option['blocked_browsers'] = array( 
-		'chrome'=>'26',
-		'firefox'=>'20',
-		'internet_explorer'=>'8',
-		'opera'=>'12',
-		'safari'=>'6'
+		'chrome'=>'32',
+		'firefox'=>'26',
+		'internet_explorer'=>'11',
+		'opera'=>'18',
+		'safari'=>'7'
 	);
 	return $option;
 }
