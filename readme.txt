@@ -32,7 +32,7 @@ This plugin uses the Browser detection library built by [Chris Schuld][]. A big 
 = 1.3.0 = 
 * Changed: Default minimum browser versions
 * Changed: Update Browser detection library (2013-12-13)
-* Added: Link target customization (same window, new window)
+* Added: Enable homepage only mode (shows only in homepage)
 
 = 1.2.2 = 
 * Changed: Default minimum browser versions
