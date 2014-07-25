@@ -3,8 +3,8 @@ Contributors: duckinformatica, whiletrue
 Donate link: http://www.duckinformatica.it/ 
 Tags: browser, update, ribbon, ie, internet explorer, chrome, firefox, opera, iphone, mobile, blackberry, android, safari, ipad, block, css, errors, display, recommend, download, page, admin
 Requires at least: 3.0
-Tested up to: 3.8.0
-Stable tag: 1.3.0
+Tested up to: 3.9.1
+Stable tag: 1.3.1
 
 Puts a ribbon on the website if the user browser is older than expected.
 
@@ -28,6 +28,11 @@ This plugin uses the Browser detection library built by [Chris Schuld][]. A big 
 
 
 == Changelog ==
+
+= 1.3.1 = 
+* Changed: Default minimum browser versions (IE11, FF31, CH36, S7, O23)
+* Changed: Update Browser detection library to 1.9 version 
+* Changed: Update compatibility with Wordpress 3.9.1 
 
 = 1.3.0 = 
 * Changed: Default minimum browser versions
