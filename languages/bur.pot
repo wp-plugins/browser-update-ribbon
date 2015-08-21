@@ -1,0 +1,186 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Browser Update Ribbon\n"
+"POT-Creation-Date: 2015-08-21 11:03+0200\n"
+"PO-Revision-Date: 2015-08-21 10:10+0200\n"
+"Last-Translator: Gabriele Lauricella <gab.lau@gmail.com>\n"
+"Language-Team: Gabriele Lauricella <gab.lau@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: browser_update_ribbon.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: browser_update_ribbon.php:58
+msgid "Select or Upload an Image"
+msgstr ""
+
+#: browser_update_ribbon.php:71
+msgid "Settings"
+msgstr ""
+
+#: browser_update_ribbon.php:93
+msgid "Detected browser"
+msgstr ""
+
+#: browser_update_ribbon.php:94
+msgid "Detected version"
+msgstr ""
+
+#: browser_update_ribbon.php:95
+msgid "User agent string"
+msgstr ""
+
+#: browser_update_ribbon.php:158
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: browser_update_ribbon.php:195
+msgid "Settings saved."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: browser_update_ribbon.php:222
+msgid "Browser Update Ribbon"
+msgstr ""
+
+#: browser_update_ribbon.php:230
+msgid "General options"
+msgstr ""
+
+#: browser_update_ribbon.php:233
+msgid "Browsers control"
+msgstr ""
+
+#: browser_update_ribbon.php:234
+msgid "To disable for some browser, set value to 1"
+msgstr ""
+
+#: browser_update_ribbon.php:247
+msgid "Minimum version"
+msgstr ""
+
+#: browser_update_ribbon.php:255
+msgid "Title"
+msgstr ""
+
+#: browser_update_ribbon.php:257
+msgid "Text shown when the user's mouse is over the ribbon"
+msgstr ""
+
+#: browser_update_ribbon.php:259
+msgid "Ribbon"
+msgstr ""
+
+#: browser_update_ribbon.php:263
+msgid "Default"
+msgstr ""
+
+#: browser_update_ribbon.php:264
+msgid "Default Ribbon"
+msgstr ""
+
+#: browser_update_ribbon.php:267
+msgid "Custom"
+msgstr ""
+
+#: browser_update_ribbon.php:269
+msgid "Custom Ribbon"
+msgstr ""
+
+#: browser_update_ribbon.php:271
+msgid "Select Image"
+msgstr ""
+
+#: browser_update_ribbon.php:277
+msgid "Position"
+msgstr ""
+
+#: browser_update_ribbon.php:279
+msgid "Top Left"
+msgstr ""
+
+#: browser_update_ribbon.php:280
+msgid "Top Right"
+msgstr ""
+
+#: browser_update_ribbon.php:281
+msgid "Bottom Left"
+msgstr ""
+
+#: browser_update_ribbon.php:282
+msgid "Bottom Right"
+msgstr ""
+
+#: browser_update_ribbon.php:284
+msgid "Choose the corner to display the ribbon"
+msgstr ""
+
+#: browser_update_ribbon.php:286
+msgid "Link URL"
+msgstr ""
+
+#: browser_update_ribbon.php:288
+msgid ""
+"Link activated when the user clicks on the ribbon. The link can be a page of "
+"your website or an external url"
+msgstr ""
+
+#: browser_update_ribbon.php:290
+msgid "Link target"
+msgstr ""
+
+#: browser_update_ribbon.php:292
+msgid "Same window"
+msgstr ""
+
+#: browser_update_ribbon.php:293
+msgid "New window"
+msgstr ""
+
+#: browser_update_ribbon.php:296
+msgid "Homepage Only"
+msgstr ""
+
+#: browser_update_ribbon.php:298
+msgid "Enable homepage only mode (shows only in homepage)"
+msgstr ""
+
+#: browser_update_ribbon.php:300
+msgid "Debug mode"
+msgstr ""
+
+#: browser_update_ribbon.php:302
+msgid "Enable debug mode (shows browser version in the footer)"
+msgstr ""
+
+#: browser_update_ribbon.php:311
+msgid "Save Changes"
+msgstr ""
+
+#: browser_update_ribbon.php:344
+msgid "Please update your browser"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://www.duckinformatica.it"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Puts a ribbon on the website if the user browser is older than expected."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "duckinformatica, whiletrue"
+msgstr ""

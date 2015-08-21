@@ -1,10 +1,10 @@
 === Browser Update Ribbon ===
 Contributors: duckinformatica, whiletrue
 Donate link: http://www.duckinformatica.it/ 
-Tags: browser, update, ribbon, ie, internet explorer, chrome, firefox, opera, iphone, mobile, blackberry, android, safari, ipad, block, css, errors, display, recommend, download, page, admin
+Tags: browser, update, ribbon, ie, internet explorer, chrome, firefox, opera, iphone, mobile, blackberry, android, safari, ipad, block, css, errors, display, recommend, download, page, admin, edge, test, check
 Requires at least: 3.0
-Tested up to: 3.9.1
-Stable tag: 1.3.1
+Tested up to: 4.3
+Stable tag: 1.4.0
 
 Puts a ribbon on the website if the user browser is older than expected.
 
@@ -16,8 +16,8 @@ Minimum browser versions are customizable in the Settings menu, along with the t
 
 For more informations: http://www.duckinformatica.it/prodotti-e-servizi/free-wordpress-plugins/
 
-This plugin uses the Browser detection library built by [Chris Schuld][]. A big thanks to him for his major contribution.
-[Chris Schuld]: http://chrisschuld.com/
+This plugin uses the Browser detection library built by [Chris Schuld]. A big thanks to him for his major contribution.
+[Chris Schuld]: http://chrisschuld.com/ - https://github.com/cbschuld/Browser.php
 
 
 == Installation ==
@@ -28,6 +28,15 @@ This plugin uses the Browser detection library built by [Chris Schuld][]. A big 
 
 
 == Changelog ==
+
+= 1.4.0 = 
+* Changed: Default minimum browser versions (IE11, FF40, CH44, S8, O31, E12)
+* Added: Position of the Ribbon (Top Left, Top Right, Bottom Left, Bottom Right)
+* Added: Custom Ribbon image 
+* Added: New Edge Browser detection
+* Added: Localizzation support
+* Added: Translatuion Italia (it_IT)
+* Changed: Update compatibility with Wordpress 4.3 
 
 = 1.3.1 = 
 * Changed: Default minimum browser versions (IE11, FF31, CH36, S7, O23)
