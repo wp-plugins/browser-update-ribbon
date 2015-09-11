@@ -1,10 +1,10 @@
 === Browser Update Ribbon ===
-Contributors: duckinformatica, whiletrue
+Contributors: duckinformatica, gab.lau, whiletrue
 Donate link: http://www.duckinformatica.it/ 
 Tags: browser, update, ribbon, ie, internet explorer, chrome, firefox, opera, iphone, mobile, blackberry, android, safari, ipad, block, css, errors, display, recommend, download, page, admin, edge, test, check
 Requires at least: 3.0
 Tested up to: 4.3
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 
 Puts a ribbon on the website if the user browser is older than expected.
 
@@ -13,21 +13,26 @@ Puts a ribbon on the website if the user browser is older than expected.
 Puts a ribbon on the website if the user browser is older than expected.
 
 Minimum browser versions are customizable in the Settings menu, along with the title and a custom link.
+Now you can set the position and the image of the ribbon.
+This plugin has full support for translation into other languages
 
 For more informations: http://www.duckinformatica.it/prodotti-e-servizi/free-wordpress-plugins/
 
-This plugin uses the Browser detection library built by [Chris Schuld]. A big thanks to him for his major contribution.
-[Chris Schuld]: http://chrisschuld.com/ - https://github.com/cbschuld/Browser.php
+This plugin uses the Browser detection library built by [Chris Schuld] https://github.com/cbschuld/Browser.php
 
 
 == Installation ==
 1. Upload the `browser-update-ribbon` directory into the `/wp-content/plugins/` directory
-2. Set your favourite values in the `Settings->Browser update ribbon` menu in Wordpress
 3. Activate the plugin through the `Plugins` menu in WordPress
+2. Set your favourite options in the `Settings->Update Ribbon` menu in Wordpress
 4. Enjoy!
 
 
 == Changelog ==
+
+= 1.4.1 = 
+* Changed: Default minimum browser versions (IE11, FF40, CH45, S8, O31, E12)
+* Fixed: Small fix
 
 = 1.4.0 = 
 * Changed: Default minimum browser versions (IE11, FF40, CH44, S8, O31, E12)
@@ -35,7 +40,7 @@ This plugin uses the Browser detection library built by [Chris Schuld]. A big th
 * Added: Custom Ribbon image 
 * Added: New Edge Browser detection
 * Added: Localizzation support
-* Added: Translatuion Italia (it_IT)
+* Added: Translation Italian (it_IT)
 * Changed: Update compatibility with Wordpress 4.3 
 
 = 1.3.1 = 
