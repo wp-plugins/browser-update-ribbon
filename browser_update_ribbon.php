@@ -3,7 +3,7 @@
 Plugin Name: Browser Update Ribbon
 Plugin URI: http://www.duckinformatica.it
 Description: Puts a ribbon on the website if the user browser is older than expected.
-Version: 1.4.1
+Version: 1.4.2
 Author: duckinformatica, gab.lau, whiletrue
 Author URI: http://www.duckinformatica.it
 Text Domain: bur
@@ -29,7 +29,7 @@ add_action('admin_init', 'browser_update_ribbon_init');
 add_action('admin_menu', 'browser_update_ribbon_menu');
 add_action('plugins_loaded', 'browser_update_ribbon_load_plugin_textdomain' );
 
-define( 'BROWSER_UPDATE_RIBBON_VERSION', '1.4.1' );
+define( 'BROWSER_UPDATE_RIBBON_VERSION', '1.4.2' );
 
 function browser_update_ribbon_load_plugin_textdomain() {
     load_plugin_textdomain( 'bur', false, basename( dirname( __FILE__ ) ) . '/languages/' );
@@ -90,9 +90,10 @@ function browser_update_ribbon_show () {
 	$browser_name = strtolower(str_replace(' ', '_', $browser->getBrowser()));
 	
 	if ($browser_update_ribbon_option['debug']) {
-		echo __('Detected browser', 'bur' ).': '.$browser_name.' --  '.
-    __('Detected version', 'bur' ).': '.(int)$browser->getVersion().' --  '.
-    __('User agent string', 'bur' ).': '.$browser->getUserAgent().'<br />';
+		echo '<b>'.__('Browser Update Ribbon ', 'bur' ).' - v '.BROWSER_UPDATE_RIBBON_VERSION.'</b><br />'. 
+    __('Detected browser', 'bur' ).': <b>'.$browser_name.'</b> --  '.
+    __('Detected version', 'bur' ).': <b>'.(int)$browser->getVersion().'</b><br />'.
+    __('User Agent', 'bur' ).': <b>'.$browser->getUserAgent().'</b>';
 	}
   $showhome=true;
   if ($browser_update_ribbon_option['onlyhome']){
@@ -111,7 +112,6 @@ function browser_update_ribbon_show () {
   }
   
   //set position
-     
   if($browser_update_ribbon_option['position']=='topleft') {
     $style='position: fixed; top:0px; left:0px; ';
   }
@@ -123,7 +123,7 @@ function browser_update_ribbon_show () {
   else if($browser_update_ribbon_option['position']=='bottomleft') {
     $style='position: fixed; bottom:0px; left:0px; ';
     if ($browser_update_ribbon_option['debug']) {
-       $style='position: fixed; bottom:25px; left:0px; ';
+       $style='position: fixed; bottom:55px; left:0px; ';
     }
   }
   else if($browser_update_ribbon_option['position']=='bottomright') {
@@ -354,12 +354,12 @@ function browser_update_ribbon_get_options_default () {
 
 	// THE NUMBER REPRESENTS THE MINUMUM ACCEPTED VERSION
 	$option['blocked_browsers'] = array( 
-		'chrome'=>'45',
-		'firefox'=>'40',
-    'edge'=>'12',
-		'internet_explorer'=>'11',
-		'opera'=>'31',
-		'safari'=>'8'
+		'chrome'            => '46',
+		'firefox'           => '41',
+		'edge'              => '12',
+		'internet_explorer' => '11',
+		'opera'             => '32',
+		'safari'            => '9'
 	);
 	return $option;
 }

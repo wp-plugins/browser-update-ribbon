@@ -4,7 +4,7 @@ Donate link: http://www.duckinformatica.it/
 Tags: browser, update, ribbon, ie, internet explorer, chrome, firefox, opera, iphone, mobile, blackberry, android, safari, ipad, block, css, errors, display, recommend, download, page, admin, edge, test, check
 Requires at least: 3.0
 Tested up to: 4.3
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 
 Puts a ribbon on the website if the user browser is older than expected.
 
@@ -27,8 +27,18 @@ This plugin uses the Browser detection library built by [Chris Schuld] https://g
 2. Set your favourite options in the `Settings->Update Ribbon` menu in Wordpress
 4. Enjoy!
 
+== Screenshots ==
+
+1. **Settings** - All settings in one place.
+2. **Frontend** - An example of how the ribbon is shown in the website.
+2. **Debug Mode** - If you select the "debug mode" this is what is showed in the footer.
 
 == Changelog ==
+
+= 1.4.2 = 
+* Added: Screenshots 
+* Changed: Default minimum browser versions (IE11, FF41, CH46, S9, O32, E12)
+* Fixed: Small fix
 
 = 1.4.1 = 
 * Changed: Default minimum browser versions (IE11, FF40, CH45, S8, O31, E12)
